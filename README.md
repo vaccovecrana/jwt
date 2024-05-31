@@ -2,6 +2,8 @@
 
 Zero-dependencies, minimal JWT validation/verification support.
 
+Loosely based on [libjwt](https://github.com/benmcollins/libjwt)
+
 It only requires wiring a JSON parser (through a simple interface) such as [Gson](https://mvnrepository.com/artifact/com.google.code.gson/gson) but you can also use Jackson, or your own parser if you wish.
 
 JWT feature support is incomplete, but the code is simple and straightforward.

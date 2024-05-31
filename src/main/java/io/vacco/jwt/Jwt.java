@@ -9,7 +9,7 @@ import java.util.*;
 
 public class Jwt {
 
-  public static final String HMAC = "HMAC", RSA = "RSA";
+  public static final String HMAC = "HMAC", RSA = "RSA", kAlg = "alg", kExp = "exp";
 
   private Alg alg;
   private byte[] key;
@@ -101,6 +101,11 @@ public class Jwt {
     this.alg = alg;
     this.key = key != null ? key.clone() : null;
     this.keyLen = key != null ? key.length : 0;
+    this.addHeader(kAlg, alg.algName);
+  }
+
+  public void setExpiration(long secondsSinceEpoch) {
+    addGrant(kExp, secondsSinceEpoch);
   }
 
   public void addGrant(String grant, Object value) {

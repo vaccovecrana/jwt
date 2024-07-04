@@ -2,7 +2,7 @@ name: Gradle Build
 on: {push: {tags: null}}
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: vaccovecrana/gitflow-oss-java-slim@1.0.1
